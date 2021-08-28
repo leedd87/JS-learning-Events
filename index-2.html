@@ -12,7 +12,8 @@
 
     <input type="number" id='numero1'>
     <input type="number" id='numero2'>
-    <button onclick="suma()">click me</button>
+    <button id='btnSuma'>suma</button>
+    <button onclick='multiplicar()'>multiplicar</button>
     <p id='prueba'></p>
     <script>
         var a = 0;
@@ -30,6 +31,23 @@
         // console.log(numero1.innerHTML);
 
         function suma() {
+            let numero1 = document.getElementById('numero1');
+            let numero2 = document.getElementById('numero2');
+            let prueba = document.getElementById('prueba');
+            prueba.innerText = parseFloat(numero1.value) + parseFloat(numero2.value);
+            document.body.appendChild(prueba);
+        }
+
+        function multiplicar() {
+            let numero1 = document.getElementById('numero1');
+            let numero2 = document.getElementById('numero2');
+            let prueba = document.getElementById('prueba');
+            prueba.innerText = parseFloat(numero1.value) * parseFloat(numero2.value);
+            document.body.appendChild(prueba);
+        }
+
+        let boton = document.getElementById('btnSuma');
+        boton.onclick = () => {
             let numero1 = document.getElementById('numero1');
             let numero2 = document.getElementById('numero2');
             let prueba = document.getElementById('prueba');
