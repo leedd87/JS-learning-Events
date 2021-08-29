@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio coder</title>
+</head>
+
+<body>
+    <h1>Coder</h1>
+
+    <h2>Producto</h2>
+    <h3>El mejor producto que vas a encontrar hoy</h3>
+    <p id='precio'>50000</p>
+    <button id='btnBuyMe'>COMPRAME</button>
+    <hr>
+    <h3>Formas de pago</h3>
+    <h4>CUOTAS</h4>
+    <button id='btnDoce'>12 Cuotas</button>
+    <button id='btnSeis'>6 Cuotas</button>
+    <button id='btnTres'>3 Cuotas</button>
+    <hr>
+    <span>Cuotas a eleccion</span><input type='number' id='cuotasEleccion'><button id='calcular'>CALCULAR</button>
+    <hr>
+    <div id='carrito'></div>
+    <hr>
+    <button id='pagar'>PAGAR</button>
+    <div id='cuotas'></div>
+    <hr>
+
+    <script>
+        let btnBuyMe = document.getElementById('btnBuyMe');
+        let btnDoce = document.getElementById('btnDoce');
+        let btnSeis = document.getElementById('btnSeis');
+        let btnTres = document.getElementById('btnTres');
+        let precio = document.getElementById('precio');
+        let prueba = document.getElementById('carrito');
+        let cuotas = document.getElementById('cuotas');
+        let pagar = document.getElementById('pagar');
+
+
+        let calcular = document.getElementById('calcular');
+
+        calcular.onclick = () => {
+            let cuotasEleccion = document.getElementById('cuotasEleccion').value;
+            parrafo.innerText = `estas eligiendo ${cuotasEleccion} cuotas. Vas a pagar por cada cuota ${precio.innerText / cuotasEleccion} pesos`
+            cuotas.parentNode.appendChild(parrafo);
+        }
+
+        pagar.onclick = () => {
+            alert('Gracias por su compra')
+        }
+
+        let parrafo = document.createElement('p'); //creando parrafo probar luego
+
+
+        btnBuyMe.onclick = () => {
+
+            carrito.innerText = `el valor del producto es ${precio.innerText}`;
+        }
+
+        //12 CUOTAS
+        btnDoce.onclick = () => {
+
+            parrafo.innerText = `estas eligiendo ${btnDoce.innerText}. Serian 12 cuotas de $${Math.trunc((precio.innerText) / 12)}
+            `;
+            // prueba.parentNode.appendChild(parrafo);
+            cuotas.parentNode.appendChild(parrafo);
+        }
+
+        //6 CUOTAS
+        btnSeis.onclick = () => {
+
+            parrafo.innerText = `estas eligiendo ${btnSeis.innerText}. Serian 6 cuotas de $${Math.trunc((precio.innerText) / 6)}
+            `;
+            // prueba.parentNode.appendChild(parrafo);
+            cuotas.parentNode.appendChild(parrafo);
+        }
+
+        //3 CUOTAS
+        btnTres.onclick = () => {
+
+            parrafo.innerText = `estas eligiendo ${btnTres.innerText}. Serian 3 cuotas de $${Math.trunc((precio.innerText) / 3)}
+            `;
+            // prueba.parentNode.appendChild(parrafo);
+            cuotas.parentNode.appendChild(parrafo);
+        }
+    </script>
+
+
+
+</body>
+
+</html>

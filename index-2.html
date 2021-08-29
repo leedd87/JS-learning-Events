@@ -39,10 +39,10 @@
         }
 
         function multiplicar() {
-            let numero1 = document.getElementById('numero1');
-            let numero2 = document.getElementById('numero2');
+            let numero1 = document.getElementById('numero1').value;
+            let numero2 = document.getElementById('numero2').value;
             let prueba = document.getElementById('prueba');
-            prueba.innerText = parseFloat(numero1.value) * parseFloat(numero2.value);
+            prueba.innerText = numero1 * numero2;
             document.body.appendChild(prueba);
         }
 
